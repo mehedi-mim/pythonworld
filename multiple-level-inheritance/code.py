@@ -11,6 +11,7 @@ class Son(Father):
 
 class GrandSon(Son):
     def __init__(self):
+        super().__init__()
         print("GrandSon")
     def showG(self):
         print("GrandSon Class Method")
