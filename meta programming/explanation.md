@@ -1,0 +1,1 @@
+#### https://www.codingem.com/metaclasses-in-python/

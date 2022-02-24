@@ -14,16 +14,21 @@ class Employe:
         return '{} {}'.format(self.first,self.last)
     def apply_raise(self):
         self.pay = int(self.pay * Employe.raise_amount)
-    
     #class methods as alternative constructors 
     @classmethod
-    def set_raise_amt(cls,amount): #There instances is not automatically called
+    def set_raise_amt(cls,amount):
         print(f'{amount} {cls.raise_amount} : Mehedi Hasan Mim')
     
     @classmethod
     def from_string(cls,emp_str):
         first,last,pay = emp_str.split('-')
         return cls(first,last,pay)
+        
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
         
 
 
@@ -44,3 +49,8 @@ class Employe:
 details = "Mehedi-Mim-10000"
 new_obj = Employe.from_string(details)
 print(new_obj.email)
+
+import datetime
+my_date = datetime.date(2022,2,22)
+
+print(Employe.is_workday(my_date))
